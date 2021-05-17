@@ -1,0 +1,25 @@
+{
+  "name": "create-instagram-account",
+  "version": "1.0.0",
+  "description": "",
+  "main": "createAccount.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alan H",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.3",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.9",
+    "node-fetch": "^2.6.1",
+    "random-username-generator": "^1.0.4",
+    "request": "^2.88.2",
+    "rr-guerrillamail": "^0.2.0",
+    "selenium-webdriver": "^4.0.0-beta.3"
+  },
+  "devDependencies": {
+    "chromedriver": "^86.0.0"
+  }
+}
