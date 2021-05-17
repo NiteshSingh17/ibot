@@ -4,7 +4,7 @@
   "description": "",
   "main": "createAccount.js",
   "scripts": {
-    "start": "npm i chromedriver && node createAccount.js",
+    "start": "npm install selenium-webdriver && node createAccount.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alan H",
