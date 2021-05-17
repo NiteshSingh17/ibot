@@ -25,7 +25,7 @@ const verifiCode = require('./getCode');
 const email = require('./createFakeMail');
 var fs = require('fs');
 var chrome = require('selenium-webdriver/chrome');
-var path = require('chromedriver').path;
+var path = require('./chromedriver').path;
 var chrd=require('chromedriver');
 let option;
 var PROXY = "212.179.18.74:3128";
@@ -124,7 +124,8 @@ una:una1,
 pass:newpass,
 email:fakeMail
 });
-await neuse.save();
+
+await neuse.save();
 
 
 
