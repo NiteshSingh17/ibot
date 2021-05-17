@@ -1,6 +1,4 @@
-
 const mongoose=require("mongoose");
-
 mongoose.connect("mongodb+srv://nitesh:qwerty%401234554321@cluster0.j7e4p.mongodb.net/left-right?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true});
 
 mongoose.set("useCreateIndex",true);
