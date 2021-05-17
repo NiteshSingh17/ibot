@@ -4,6 +4,7 @@
   "description": "",
   "main": "createAccount.js",
   "scripts": {
+    "start": "node createAccount.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alan H",
