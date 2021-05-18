@@ -4,7 +4,7 @@
   "description": "",
   "main": "createAccount.js",
   "scripts": {
-    "start": "npm install --save chromedriver && npm install selenium-webdriver && node createAccount.js",
+    "start": "npm install --save chromedriver --chromedriver_version=LATEST && npm install selenium-webdriver && node createAccount.js",
     "test": "echo \"Error: noo test specified\" && exit 1"
   },
   "author": "Alan H",
@@ -19,9 +19,9 @@
     "request": "^2.88.2",
     "rr-guerrillamail": "^0.2.0",
     "selenium-webdriver": "^4.0.0-beta.3",
-    "chromedriver": "^90.0.0"
+    "chromedriver": "^86.0.0"
   },
   "devDependencies": {
-    "chromedriver": "^90.0.0"
+    "chromedriver": "^86.0.0"
   }
 }
