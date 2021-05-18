@@ -28,7 +28,10 @@ var chrd=require('chromedriver');
 let option;
 var PROXY = "212.179.18.74:3128";
 var prco=0;
-
+option = new chrome.Options().addArguments(`--proxy-server=http://${PROXY}`);
+ options.addArguments("--headless");
+    options.addArguments("--disable-gpu");
+    options.addArguments("--no-sandbox");
 var service = new chrome.ServiceBuilder(path).build();
 chrome.setDefaultService(service);
 
@@ -42,9 +45,11 @@ async function start(){
 for(crea=1;crea<1000;crea++){
 console.log("cration start");
 if(crea%15==0){
-PROXY=PROXYARR[prco];prco=((prco+1)%PROXYARR.length);}
-console.log(crea,PROXY);
+PROXY=PROXYARR[prco];prco=((prco+1)%PROXYARR.length);
 option = new chrome.Options().addArguments(`--proxy-server=http://${PROXY}`);
+}
+console.log(crea,PROXY);
+
 await fakeInstagramAccount();
 console.log("cration end");
 }
