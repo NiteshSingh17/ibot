@@ -44,7 +44,8 @@ var chrd=require('chromedriver');
 let option;
 var PROXY = "103.42.195.70:53281";
 var prco=0;
-option = new chrome.Options().addArguments(`--proxy-server=http://${PROXY}`);
+option = new chrome.Options();
+//option.addArguments(`--proxy-server=http://${PROXY}`);
  option.addArguments("--headless");
     option.addArguments("--disable-gpu");
     option.addArguments("--no-sandbox");
@@ -58,11 +59,11 @@ const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitT
 var crea=1;
 
 async function start(){
-for(crea=1;crea<5;crea++){
+for(crea=1;crea<3;crea++){
 console.log("cration start");
 if(crea%15==0){
 PROXY=PROXYARR[prco];prco=((prco+1)%PROXYARR.length);
-option = new chrome.Options().addArguments(`--proxy-server=http://${PROXY}`);
+//option = new chrome.Options().addArguments(`--proxy-server=http://${PROXY}`);
  option.addArguments("--headless");
     option.addArguments("--disable-gpu");
     option.addArguments("--no-sandbox");
