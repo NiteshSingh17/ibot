@@ -59,7 +59,7 @@ const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitT
 var crea=1;
 
 async function start(){
-for(crea=1;crea<2;crea++){
+for(crea=1;crea<5;crea++){
 console.log("cration start");
 if(crea%15==0){
 PROXY=PROXYARR[prco];prco=((prco+1)%PROXYARR.length);
@@ -83,16 +83,16 @@ let browser = await new Builder().withCapabilities(Capabilities.chrome()).forBro
 
     await browser.manage().deleteAllCookies();
  try {
-   // await browser.get("https://www.instagram.com/accounts/emailsignup/");
-    await browser.get("https://www.deviceinfo.me/");
-   //var te1=await browser.findElement(By.tagName("body")).getText();
-   var te1=await browser.findElement(By.xpath("/html/body/div/div[3]/div")).getText();
+    await browser.get("https://www.instagram.com/accounts/emailsignup/");
+   // await browser.get("https://www.deviceinfo.me/");
+   var te1=await browser.findElement(By.tagName("body")).getText();
+   //var te1=await browser.findElement(By.xpath("/html/body/div/div[3]/div")).getText();
    console.log("intex ",te1);
    console.log("waiting 1 min");
-   // await sleep(60000);
+    await sleep(60000);
     await sleep(5000);
-    //let fakeMail = await email.getFakeMail();
-   //console.log("fake mail ",fakeMail);
+    let fakeMail = await email.getFakeMail();
+   console.log("fake mail ",fakeMail);
     await browser.findElement(By.name("emailOrPhone")).sendKeys(fakeMail, Key.RETURN);
 
 var nam1=await accountInfo.generatingName();
