@@ -1,3 +1,19 @@
+
+const Port=process.env.PORT||3000;
+
+const express = require("express");
+
+const app = express();
+
+
+app.listen(Port, function()
+{
+  console.log("Server started on port 3000.");
+
+console.log("welcome2");
+});
+
+
 const mongoose=require("mongoose");
 mongoose.connect("mongodb+srv://nitesh:qwerty%401234554321@cluster0.j7e4p.mongodb.net/left-right?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true});
 
