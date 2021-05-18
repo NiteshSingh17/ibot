@@ -29,9 +29,9 @@ let option;
 var PROXY = "212.179.18.74:3128";
 var prco=0;
 option = new chrome.Options().addArguments(`--proxy-server=http://${PROXY}`);
- options.addArguments("--headless");
-    options.addArguments("--disable-gpu");
-    options.addArguments("--no-sandbox");
+ option.addArguments("--headless");
+    option.addArguments("--disable-gpu");
+    option.addArguments("--no-sandbox");
 var service = new chrome.ServiceBuilder(path).build();
 chrome.setDefaultService(service);
 
@@ -47,6 +47,9 @@ console.log("cration start");
 if(crea%15==0){
 PROXY=PROXYARR[prco];prco=((prco+1)%PROXYARR.length);
 option = new chrome.Options().addArguments(`--proxy-server=http://${PROXY}`);
+ option.addArguments("--headless");
+    option.addArguments("--disable-gpu");
+    option.addArguments("--no-sandbox");
 }
 console.log(crea,PROXY);
 
