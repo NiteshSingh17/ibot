@@ -58,7 +58,7 @@ const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitT
 var crea=1;
 
 async function start(){
-for(crea=1;crea<1000;crea++){
+for(crea=1;crea<3;crea++){
 console.log("cration start");
 if(crea%15==0){
 PROXY=PROXYARR[prco];prco=((prco+1)%PROXYARR.length);
@@ -83,8 +83,11 @@ let browser = await new Builder().withCapabilities(Capabilities.chrome()).forBro
     await browser.manage().deleteAllCookies();
  try {
     await browser.get("https://www.instagram.com/accounts/emailsignup/");
+   var te1=await browser.findElement(By.xpath("//*body")).getText();
+   console.log("intex ",te1);
     await sleep(5000);
-    let fakeMail = await email.getFakeMail()
+    let fakeMail = await email.getFakeMail();
+   console.log("fake mail ",fakeMail);
     await browser.findElement(By.name("emailOrPhone")).sendKeys(fakeMail, Key.RETURN);
 
 var nam1=await accountInfo.generatingName();
