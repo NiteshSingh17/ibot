@@ -5,7 +5,7 @@
   "main": "createAccount.js",
   "scripts": {
     "start": "npm install --save chromedriver && npm install selenium-webdriver && node createAccount.js",
-    "test": "echo \"Error: noo test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alan H",
   "license": "ISC",
