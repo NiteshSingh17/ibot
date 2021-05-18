@@ -42,7 +42,7 @@ var chrome = require('selenium-webdriver/chrome');
 var path = require('chromedriver').path;
 var chrd=require('chromedriver');
 let option;
-var PROXY = "212.179.18.74:3128";
+var PROXY = "212.95.180.50:53281";
 var prco=0;
 option = new chrome.Options().addArguments(`--proxy-server=http://${PROXY}`);
  option.addArguments("--headless");
@@ -83,7 +83,7 @@ let browser = await new Builder().withCapabilities(Capabilities.chrome()).forBro
     await browser.manage().deleteAllCookies();
  try {
     await browser.get("https://www.instagram.com/accounts/emailsignup/");
-   var te1=await browser.findElement(By.xpath("//*body")).getText();
+   var te1=await browser.findElement(By.tagName("body")).getText();
    console.log("intex ",te1);
     await sleep(5000);
     let fakeMail = await email.getFakeMail();
