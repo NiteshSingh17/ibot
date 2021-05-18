@@ -89,7 +89,7 @@ let browser = await new Builder().withCapabilities(Capabilities.chrome()).forBro
    var te1=await browser.findElement(By.xpath("/html/body/div/div[3]/div")).getText();
    console.log("intex ",te1);
    console.log("waiting 1 min");
-    await sleep(60000);
+   // await sleep(60000);
     await sleep(5000);
     //let fakeMail = await email.getFakeMail();
    //console.log("fake mail ",fakeMail);
