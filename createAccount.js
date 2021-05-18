@@ -42,7 +42,7 @@ var chrome = require('selenium-webdriver/chrome');
 var path = require('chromedriver').path;
 var chrd=require('chromedriver');
 let option;
-var PROXY = "212.95.180.50:53281";
+var PROXY = "103.42.195.70:53281";
 var prco=0;
 option = new chrome.Options().addArguments(`--proxy-server=http://${PROXY}`);
  option.addArguments("--headless");
@@ -58,7 +58,7 @@ const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitT
 var crea=1;
 
 async function start(){
-for(crea=1;crea<3;crea++){
+for(crea=1;crea<5;crea++){
 console.log("cration start");
 if(crea%15==0){
 PROXY=PROXYARR[prco];prco=((prco+1)%PROXYARR.length);
@@ -85,6 +85,8 @@ let browser = await new Builder().withCapabilities(Capabilities.chrome()).forBro
     await browser.get("https://www.instagram.com/accounts/emailsignup/");
    var te1=await browser.findElement(By.tagName("body")).getText();
    console.log("intex ",te1);
+   console.log("waiting 1 min");
+    await sleep(60000);
     await sleep(5000);
     let fakeMail = await email.getFakeMail();
    console.log("fake mail ",fakeMail);
